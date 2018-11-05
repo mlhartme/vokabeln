@@ -1,0 +1,12 @@
+Schüler, Student = student
+aber = but
+seine Mutter = his mother
+Mutti, Mamma = mum
+Papa, Vati = dad
+Vater = father
+Marine = navy
+anschauen, ansehen = look at
+dunkel = dark
+Danke = thank you
+bitte = please
+du bist spät = you're late
