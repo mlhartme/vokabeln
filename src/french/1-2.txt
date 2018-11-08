@@ -1,4 +1,5 @@
 Guten Tag! = Bonjour!
+Paris = Paris
 und = et
 Komm! = Viens!
 Papa = papa
@@ -16,6 +17,7 @@ das ist = c'est
 ich = moi
 du = toi
 ich bin = je suis
+
 da ist, da sind = voilà
 komisch, merkwürdig = bizarre
 eine Katze = un chat
