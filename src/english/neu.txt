@@ -1,0 +1,30 @@
+Schüler, Student = student
+aber = but
+seine Mutter = his mother
+Mutti, Mamma = mum
+Papa, Vati = dad
+Vater = father
+Marine = navy
+anschauen, ansehen = look at
+dunkel = dark
+Danke = thank you
+bitte = please
+du bist spät = you're late
+vor der Schule = before school 
+du bist nicht = you are not
+ihr seid nicht = you are not
+traurig = sad
+dort, da = there
+Geh nicht. = Don't go.
+Tschüs. = Bye.
+Pass auf! = Watch out!
+Entschuldigung. = Sorry.
+Und? Na und? = So?
+Freut mich dich/euch/sie kennenzulernen. = Nice to meet you.
+sich beeilen = hurry up
+wer? = who?
+freundlich = friendly
+
+14 = fourteen
+40 = forty
+
