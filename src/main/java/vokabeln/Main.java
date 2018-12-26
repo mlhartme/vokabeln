@@ -20,10 +20,12 @@ import net.oneandone.inline.Cli;
 import net.oneandone.sushi.fs.World;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class Main {
 	private static final String ANSI_CLS = "\u001b[2J";
@@ -34,10 +36,10 @@ public class Main {
 		List<String> lines;
 		Map<String, String> map;
 		int idx;
-		Iterator<String> iter;
 		String left;
 		String right;
 		String input;
+		List<String> keys;
 
 		if (args.length != 1) {
 			throw new ArgumentException("missing file name");
@@ -57,15 +59,15 @@ public class Main {
 		}
 		for (int runde = 1; true; runde++) {
 			System.out.println("Runde " + runde + ", " + map.size() + " Vokabeln");
-			iter = map.keySet().iterator();
-			while (iter.hasNext()) {
-				left = iter.next();
+			keys = new ArrayList<>(map.keySet());
+			while (!keys.isEmpty()) {
+				left = eatRandomKey(keys);
 				right = map.get(left);
 				System.out.print(left);
 				System.out.print(" = ");
 				input = System.console().readLine().trim();
 				if (right.equals(input)) {
-					iter.remove();
+					map.remove(left);
 				} else {
 					System.out.println("  stimmt nicht, richtig ist:");
 					System.out.println("  " + left + " = " + right);
@@ -80,5 +82,14 @@ public class Main {
 			System.console().readLine();
 			System.out.println(ANSI_CLS + ANSI_HOME);
 		}
+	}
+
+	private static final Random random = new Random();
+
+	private static String eatRandomKey(List<String> entries) {
+		int idx;
+
+		idx = random.nextInt(entries.size());
+		return entries.remove(idx);
 	}
 }
