@@ -34,10 +34,7 @@ public class Main {
 	private static final String ANSI_HOME = "\u001b[H";
 
 	public static void main(String[] args) throws IOException {
-		World world;
-		List<String> lines;
 		Map<String, String> map;
-		int idx;
 		String left;
 		String right;
 		String input;
@@ -45,23 +42,11 @@ public class Main {
 
 		Terminal terminal = TerminalBuilder.terminal();
 		LineReader lineReader = LineReaderBuilder.builder().terminal(terminal).build();
-		if (args.length != 1) {
-			throw new ArgumentException("missing file name");
+		if (args.length == 0) {
+			throw new ArgumentException("usage: vokabeln file+");
 		}
 
-		world = World.create();
-		lines = world.file(args[0]).readLines();
-		map = new LinkedHashMap<>();
-		for (String line : lines) {
-			if (line.trim().isEmpty()) {
-				continue;
-			}
-			idx = line.indexOf('=');
-			if (idx == -1) {
-				System.out.println("syntax error: " + line);
-			}
-			map.put(line.substring(0, idx).trim(), line.substring(idx + 1).trim());
-		}
+		map = load(args);
 		for (int runde = 1; true; runde++) {
 			System.out.println("Runde " + runde + ", " + map.size() + " Vokabeln");
 			keys = new ArrayList<>(map.keySet());
@@ -87,6 +72,31 @@ public class Main {
 			System.console().readLine();
 			System.out.println(ANSI_CLS + ANSI_HOME);
 		}
+	}
+
+	private static Map<String, String> load(String ... files) throws IOException {
+		World world;
+		List<String> lines;
+		Map<String, String> map;
+		int idx;
+
+		world = World.create();
+		lines = new ArrayList<>();
+		for (String file : files) {
+			lines.addAll(world.file(file).readLines());
+		}
+		map = new LinkedHashMap<>();
+		for (String line : lines) {
+			if (line.trim().isEmpty()) {
+				continue;
+			}
+			idx = line.indexOf('=');
+			if (idx == -1) {
+				System.out.println("syntax error: " + line);
+			}
+			map.put(line.substring(0, idx).trim(), line.substring(idx + 1).trim());
+		}
+		return map;
 	}
 
 	private static final Random random = new Random();
