@@ -30,6 +30,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class Main {
+	// https://en.wikipedia.org/wiki/ANSI_escape_code
 	private static final String ANSI_CLS = "\u001b[2J\u001b[3J";
 	private static final String ANSI_HOME = "\u001b[H";
 
