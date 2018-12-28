@@ -30,7 +30,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class Main {
-	private static final String ANSI_CLS = "\u001b[2J";
+	private static final String ANSI_CLS = "\u001b[2J\u001b[3J";
 	private static final String ANSI_HOME = "\u001b[H";
 
 	public static void main(String[] args) throws IOException {
