@@ -16,12 +16,14 @@
 package vokabeln;
 
 import net.oneandone.inline.ArgumentException;
-import net.oneandone.inline.Cli;
 import net.oneandone.sushi.fs.World;
+import org.jline.reader.LineReader;
+import org.jline.reader.LineReaderBuilder;
+import org.jline.terminal.Terminal;
+import org.jline.terminal.TerminalBuilder;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,9 +43,12 @@ public class Main {
 		String input;
 		List<String> keys;
 
+		Terminal terminal = TerminalBuilder.terminal();
+		LineReader lineReader = LineReaderBuilder.builder().terminal(terminal).build();
 		if (args.length != 1) {
 			throw new ArgumentException("missing file name");
 		}
+
 		world = World.create();
 		lines = world.file(args[0]).readLines();
 		map = new LinkedHashMap<>();
@@ -65,7 +70,7 @@ public class Main {
 				right = map.get(left);
 				System.out.print(left);
 				System.out.print(" = ");
-				input = System.console().readLine().trim();
+				input = lineReader.readLine().trim();
 				if (right.equals(input)) {
 					map.remove(left);
 				} else {
