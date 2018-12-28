@@ -53,9 +53,7 @@ public class Main {
 			while (!keys.isEmpty()) {
 				left = eatRandomKey(keys);
 				right = map.get(left);
-				System.out.print(left);
-				System.out.print(" = ");
-				input = lineReader.readLine().trim();
+				input = lineReader.readLine(left + " = ").trim();
 				if (right.equals(input)) {
 					map.remove(left);
 				} else {
