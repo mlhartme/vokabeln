@@ -1,0 +1,35 @@
+mein Lieblingstier = my favourite animal
+Ameise = ant
+Bär = bear
+Vogel = bird
+Schmetterling = butterfly
+Schmetterlinge = bitterflies
+Katze = cat
+Hund = dog
+Elefant = elephant
+Frosch = frog
+Giraffe = giraffe
+Meerschweinchen = guinea pig
+Pferd = horse
+Löwe = lion
+Affe = monkey
+Schwein = pig
+Kaninchen = rabbit
+Ratte = rat
+Schlange = snake
+Wal = whale
+
+ein Elefant = an elephant
+Bild = picture
+seltsam, komisch = strange
+
+Lineal = ruler
+Spiel = game
+mit = with
+Bein = leg
+ohne = without
+nun, jetzt = now
+Zeit, Uhrzeit = time
+für = for
+Englisch = English
+(Unterrichts-) Stunde = lesson
