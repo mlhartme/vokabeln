@@ -3,7 +3,7 @@ Ameise = ant
 Bär = bear
 Vogel = bird
 Schmetterling = butterfly
-Schmetterlinge = bitterflies
+Schmetterlinge = butterflies
 Katze = cat
 Hund = dog
 Elefant = elephant
@@ -22,6 +22,18 @@ Wal = whale
 ein Elefant = an elephant
 Bild = picture
 seltsam, komisch = strange
+
+rot = red
+gelb = yellow
+blau = blue
+grün = green
+braun = brown
+orange = orange
+grau = grey
+pink, rosa = pink
+violett, lila = purple
+weiß = white
+schwarz = black
 
 Lineal = ruler
 Spiel = game
