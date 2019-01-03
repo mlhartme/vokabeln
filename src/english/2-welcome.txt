@@ -1,4 +1,5 @@
 willkommen in Plymouth = welcome to Plymouth
+Silkys Rundgang/Rundfahrt/Reise durch Plymouth = Silky's tour of Plymouth
 Fluss = river
 Burg, Schloß = castle
 Schwimmbecken = swimming pool
@@ -8,6 +9,7 @@ Boot = boat
 Meer = sea
 Riesenrad = big wheel
 groß = big
+können = can
 auf der Landkarte = on the map
 Silky's Lied = Silky's song
 ist es Montag? = is it Monday?
@@ -19,6 +21,6 @@ Donnerstag = Thursday
 Freitag = Friday
 Samstag = Saturday
 Sonntag = Sunday
+
 jeden Tag = every day
 großartig = great
-
