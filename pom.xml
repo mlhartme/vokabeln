@@ -34,6 +34,11 @@
       <version>1.1.1</version>
     </dependency>
 
+    <dependency><!-- https://github.com/jline/jline3 -->
+      <groupId>org.jline</groupId>
+      <artifactId>jline</artifactId>
+      <version>3.9.0</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
