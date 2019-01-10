@@ -49,5 +49,7 @@ Pause = break
 lernen = learn
 zweiter = second
 dritter = third
+vierter = forth
+fünfter = fifth
 wann? = when?
 schreiben = write
