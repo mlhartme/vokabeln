@@ -19,11 +19,10 @@ Pokale, Trophäen = trophies
 weg, fort = away
 verrückt = mad
 denken, glauben = think
-so cool/nett/ ... = so cool/nice ...
+so cool/nett ... = so cool/nice ...
 einen Spaziergang machen, spazieren gehen = go for a walk
 Aussprache = pronounciation
 rennen, laufen = run
-
 
 Onkel = uncle
 Tante = aunt
