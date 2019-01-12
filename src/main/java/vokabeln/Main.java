@@ -35,11 +35,13 @@ public class Main {
 	private static final String ANSI_HOME = "\u001b[H";
 
 	public static void main(String[] args) throws IOException {
-		Map<String, String> map;
+		Map<String, String> all;
 		String left;
 		String right;
 		String input;
-		List<String> keys;
+		List<String> round;
+		int roundCount;
+		int tries;
 
 		Terminal terminal = TerminalBuilder.terminal();
 		LineReader lineReader = LineReaderBuilder.builder().terminal(terminal).build();
@@ -47,30 +49,45 @@ public class Main {
 			throw new ArgumentException("usage: vokabeln file+");
 		}
 
-		map = load(args);
+		all = load(args);
 		for (int runde = 1; true; runde++) {
-			System.out.println("Runde " + runde + ", " + map.size() + " Vokabeln");
-			keys = new ArrayList<>(map.keySet());
-			while (!keys.isEmpty()) {
-				left = eatRandomKey(keys);
-				right = map.get(left);
-				input = lineReader.readLine(left + " = ").trim();
-				if (right.equals(input)) {
-					map.remove(left);
-				} else {
-					System.out.println("  stimmt nicht, richtig ist:");
-					System.out.println("  " + left + " = " + right);
+			round = new ArrayList<>(all.keySet());
+			roundCount = round.size();
+			while (!round.isEmpty()) {
+				left = eatRandomKey(round);
+				right = all.get(left);
+				tries = 0;
+				while (true) {
+					tries++;
+					cls();
+					System.out.println("Runde " + runde + ", Vokabel " + (roundCount - round.size()) + "/" + roundCount);
+					input = lineReader.readLine(left + " = ").trim();
+					if (right.equals(input)) {
+						if (tries == 1) {
+							all.remove(left);
+						}
+						System.out.println("  richtig :)");
+						System.console().readLine();
+						break;
+					} else {
+						System.out.println("  stimmt nicht, richtig ist:");
+						System.out.println("  " + left + " = " + right);
+						System.console().readLine();
+					}
 				}
 			}
 			System.out.println();
-			if (map.isEmpty()) {
+			if (all.isEmpty()) {
 				System.out.println("Geschafft :) Zahl der Runden: " + runde);
 				break;
 			}
 			System.out.println("Runde beendet - bitte Return drücken");
 			System.console().readLine();
-			System.out.println(ANSI_CLS + ANSI_HOME);
 		}
+	}
+
+	private static void cls() {
+		System.out.println(ANSI_CLS + ANSI_HOME);
 	}
 
 	private static Map<String, String> load(String ... files) throws IOException {
