@@ -70,8 +70,8 @@ public class Main {
 						System.console().readLine();
 						break;
 					} else {
-						System.out.println("  stimmt nicht, richtig ist:");
 						System.out.println("  " + left + " = " + right);
+						System.out.println("  noch nicht richtig ...");
 						System.console().readLine();
 					}
 				}
