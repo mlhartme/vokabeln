@@ -61,17 +61,19 @@ public class Main {
 					tries++;
 					cls();
 					System.out.println("Runde " + runde + ", Vokabel " + (roundCount - round.size()) + "/" + roundCount);
+					System.out.println();
 					input = lineReader.readLine(left + " = ").trim();
+					System.out.println(left + " = " + right);
+					System.out.println();
 					if (right.equals(input)) {
 						if (tries == 1) {
 							all.remove(left);
 						}
-						System.out.println("  richtig :)");
+						System.out.println("Richtig :)");
 						System.console().readLine();
 						break;
 					} else {
-						System.out.println("  " + left + " = " + right);
-						System.out.println("  noch nicht richtig ...");
+						System.out.println("Probier nochmal ...");
 						System.console().readLine();
 					}
 				}
